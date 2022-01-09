@@ -17,7 +17,7 @@
 ;;; Code:
 (deftheme dracula)
 
-
+
 ;;;; Configuration options:
 
 (defgroup dracula nil
@@ -323,6 +323,7 @@ read it before opening a new issue about your will.")
                (helm-ff-dotted-directory :foreground ,dracula-green :background ,dracula-bg :weight normal)
                (helm-ff-executable :foreground ,other-blue :background ,dracula-bg :weight normal)
                (helm-ff-file :foreground ,dracula-fg :background ,dracula-bg :weight normal)
+               (helm-ff-file-extension :foreground ,dracula-orange :background ,dracula-bg :weight normal)
                (helm-ff-invalid-symlink :foreground ,dracula-pink :background ,dracula-bg :weight bold)
                (helm-ff-prefix :foreground ,dracula-bg :background ,dracula-pink :weight normal)
                (helm-ff-symlink :foreground ,dracula-pink :background ,dracula-bg :weight bold)
@@ -334,7 +335,7 @@ read it before opening a new issue about your will.")
                (helm-grep-running :foreground ,dracula-green :background ,dracula-bg)
                (helm-header :foreground ,fg2 :background ,dracula-bg :underline nil :box nil)
                (helm-moccur-buffer :foreground ,dracula-green :background ,dracula-bg)
-               (helm-selection :background ,bg2 :underline nil)
+               (helm-selection :background ,bg4 :underline nil)
                (helm-selection-line :background ,bg2)
                (helm-separator :foreground ,dracula-purple :background ,dracula-bg)
                (helm-source-go-package-godoc-description :foreground ,dracula-yellow)
@@ -732,7 +733,7 @@ read it before opening a new issue about your will.")
                ;; term
                (term :foreground ,dracula-fg :background ,dracula-bg)
                (term-color-black :foreground ,dracula-bg :background ,dracula-comment)
-               (term-color-blue :foreground ,dracula-purple :background ,dracula-purple)
+               (term-color-blue :foreground ,other-blue :background ,other-blue)
                (term-color-cyan :foreground ,dracula-cyan :background ,dracula-cyan)
                (term-color-green :foreground ,dracula-green :background ,dracula-green)
                (term-color-magenta :foreground ,dracula-pink :background ,dracula-pink)
@@ -778,7 +779,11 @@ read it before opening a new issue about your will.")
                (whitespace-trailing :inherit trailing-whitespace)
                ;; yard-mode
                (yard-tag-face :inherit font-lock-builtin-face)
-               (yard-directive-face :inherit font-lock-builtin-face))))
+               (yard-directive-face :inherit font-lock-builtin-face)
+               ;; git-gutter
+               (git-gutter:added :background ,dracula-green)
+               (git-gutter:modified :background ,dracula-orange)
+               (git-gutter:deleted :background ,dracula-red))))
 
   (apply #'custom-theme-set-faces
          'dracula
